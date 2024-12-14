@@ -1,9 +1,22 @@
 /* General Styles */
+.product-item img {
+    width: 150px; 
+    height: 200px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: 100%;
 }
 
 nav {

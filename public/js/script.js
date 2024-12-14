@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     const productList = document.querySelector('.product-list');
     if (productList) {
         try {
+            console.log('Fetching products...');
             const response = await fetch('/products');
             const products = await response.json();
+            console.log('Fetched products:', products);
 
             products.forEach(product => {
                 const productItem = document.createElement('div');
@@ -20,5 +22,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         } catch (error) {
             console.error('Failed to fetch products:', error);
         }
+    } else {
+        console.error('.product-list container not found in the HTML.');
     }
 });
