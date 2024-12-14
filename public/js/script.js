@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 productItem.innerHTML = `
                     <h2>${product.name}</h2>
                     <p>${product.description}</p>
-                    <p>$${product.price.toFixed(2)}</p>
+                    <p>$${parseFloat(product.price).toFixed(2)}</p>
                     <img src="images/${product.image}" alt="${product.name}">
                     <a href="sproduct.html?id=${product.id}" class="btn">View Product</a>
                 `;
