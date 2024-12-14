@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <h2>${product.name}</h2>
                     <p>${product.description}</p>
                     <p>$${product.price.toFixed(2)}</p>
+                    <img src="images/${product.image}" alt="${product.name}">
                     <a href="sproduct.html?id=${product.id}" class="btn">View Product</a>
                 `;
                 productList.appendChild(productItem);
