@@ -20,12 +20,29 @@
         </ul>
     </nav>
     <!-- Shop Section -->
-    <section class="shop">
+    <section id="search-bar">
         <h1>Shop Our Products</h1>
+        <input type="text" id="search-input" placeholder="Search by name, genre, author, or price..." />
+        <select id="filter-criteria">
+            <option value="all">All</option>
+            <option value="name">Name</option>
+            <option value="genre">Genre</option>
+            <option value="author">Author</option>
+            <option value="price">Price</option>
+        </select>
+    </section>
+
+    <section class="shop">
         <div class="product-list">
             <!-- Product items will be dynamically added here -->
         </div>
     </section>
+    <section id="product">
+        <h2>Featured Products</h2>
+        <p>Best selling mangas</p>
+        <div class="product-list"></div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 E-Shop. All rights reserved.</p>

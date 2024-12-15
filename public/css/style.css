@@ -170,3 +170,31 @@ footer {
     gap: 2rem;
     justify-content: center;
 }
+
+/* Center the titles */
+#product h2,
+#product p {
+    text-align: center; /* Align the text horizontally in the center */
+}
+
+/* Center the search bar */
+#search-bar {
+    display: flex; /* Use a flexible box layout for alignment */
+    justify-content: center; /* Center the search bar elements horizontally */
+    align-items: center; /* Align the elements vertically within the same row */
+    gap: 10px; /* Add spacing between the input field and the dropdown */
+    margin-bottom: 20px; /* Add some space below the search bar */
+}
+
+/* Styles for the search input field */
+#search-input {
+    padding: 10px; /* Add padding inside the input for better readability */
+    font-size: 16px; /* Set the font size for the input text */
+    width: 50%; /* Adjust the width of the input field (can be modified as needed) */
+}
+
+/* Styles for the filter dropdown */
+#filter-criteria {
+    padding: 10px; /* Add padding for better appearance */
+    font-size: 16px; /* Match the font size with the input field */
+}
