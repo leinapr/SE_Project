@@ -1,24 +1,28 @@
-<!-- public/shop.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - E-commerce Website</title>
+    <title>Home - E-commerce Website</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
-    <nav>
-        <div class="logo">E-Ragana</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="cart.html">Cart</a></li>
-        </ul>
-    </nav>
+    <section id="header">
+        <a href="#"><img src="/images/logo.jpg" class="logo" alt="" /></a>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class ="active" href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fas fa-cart-arrow-down"></i></a></li>
+            </ul>
+        </div>
+    </section>
     <!-- Shop Section -->
     <section id="search-bar">
         <h1>Shop Our Products</h1>
@@ -45,7 +49,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+        <p>&copy; 2024 E-Ragana All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
 </body>
