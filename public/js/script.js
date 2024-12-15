@@ -12,9 +12,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 productItem.classList.add('product-item');
                 productItem.innerHTML = `
                     <h2>${product.name}</h2>
-                    <p>${product.description}</p>
                     <p>$${parseFloat(product.price).toFixed(2)}</p>
-                    <img src="images/${product.image}" alt="${product.name}">
+                    <img src="${product.image}" alt="${product.name}" class="product-image" />
                     <a href="sproduct.html?id=${product.id}" class="btn">View Product</a>
                 `;
                 productList.appendChild(productItem);
