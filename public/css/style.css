@@ -32,6 +32,67 @@ nav .logo {
     font-size: 1.5rem;
 }
 
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 80px;
+    background: #8e24ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: hotpink;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: deeppink;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+.logo {
+    width: 100px; 
+    height: auto; 
+    margin-left: 10px; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+nav .header {
+    font-size: 1.5rem;
+}
+
 nav ul {
     list-style: none;
     display: flex;
@@ -53,7 +114,21 @@ nav ul li a {
     background-position: top 25% right 0;
     color: #fff;
     text-align: center;
+    padding: 5rem 1rem; 
+}
+
+#hero {
+    background: url('../images/hero.jpg') no-repeat center center;
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 25% right 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 5rem 1rem;
+    justify-content: center;
+    text-align: center;
 }
 
 .hero h1 {
@@ -65,7 +140,7 @@ nav ul li a {
 }
 
 .hero .btn {
-    background-color: #ff6347;
+    background-color: #DB0094;
     color: #fff;
     padding: 0.5rem 1rem;
     text-decoration: none;
@@ -73,7 +148,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #333;
+    background-color: #39006b;
     color: #fff;
     text-align: center;
     padding: 1rem;
