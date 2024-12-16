@@ -7,7 +7,7 @@ const Product = sequelize.define('Product', {
         primaryKey: true,
     },
     name: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(500),
         allowNull: false
     },
     type: {
@@ -35,19 +35,28 @@ const Product = sequelize.define('Product', {
     description: {
         type: DataTypes.TEXT
     },
-    price: {
-        type: DataTypes.DECIMAL(10, 2),
-        allowNull: false
-    },
     image: {
         type: DataTypes.STRING
     },
     url: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING(500)
+    },
+    price: {
+        type: DataTypes.DECIMAL(10, 2),
+        allowNull: false
     }
 }, {
     tableName: 'products', // Specify the existing table name
     timestamps: false      // Disable timestamps
 });
+
+// Find product by ID
+Product.findById = async function(id) {
+    try {
+        return await Product.findByPk(id); // find by primary key (id)
+    } catch (err) {
+        throw new Error('Product not found');
+    }
+};
 
 module.exports = Product;
