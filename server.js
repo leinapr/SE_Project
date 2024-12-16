@@ -19,7 +19,11 @@ app.get('/products', async (req, res) => {
     }
 
     try {
-        const products = await Product.findAll(); // Fetch all products from the database
+        const products = await Product.findAll({
+            where: {
+                ...(author && { authors: { [Sequelize.Op.like]: `%${author}%` } })
+            }
+        });
         res.json(products);  // Send the list of products as a JSON response
     } catch (error) {
         console.error(error);

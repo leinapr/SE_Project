@@ -1,73 +1,59 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const productList = document.querySelector('.product-list');
+    const productTop = document.querySelector('.product-top .pro-container');
     const searchInput = document.getElementById('search-input');
     const filterCriteria = document.getElementById('filter-criteria');
     const filterGenre = document.getElementById('filter-genre');
     const filterCategory = document.getElementById('filter-category');
     const filterType = document.getElementById('filter-type');
     const sortBy = document.getElementById('sort-by');
-    const response = await fetch('/products');  // Fetch request to /products route
-    
+    const response = await fetch('/products');
 
-    const cartContainer = document.querySelector('.cart-items');
-    const taxElement = document.getElementById('tax');
-    const totalElement = document.getElementById('total');
+    if (productTop) {
+        try {
+            console.log('Fetching products...');
+            if (!response.ok) {
+                throw new Error(`Failed to fetch products: ${response.status}`);
+            }
+            const products = await response.json();
+            console.log('Fetched products:', products);
 
-    const cartList = document.querySelector('.cart-list');
-    const cartSubtotalElement = document.getElementById('cart-subtotal');
-    const cartTotalElement = document.getElementById('cart-total');
-    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+            // Function to display the top 4 products with the highest scores
+            const displayTopProducts = (topProducts) => {
+                productTop.innerHTML = ''; // Clear previous products
+                if (topProducts.length === 0) {
+                    productTop.innerHTML = '<p>No products found.</p>';
+                } else {
+                    topProducts.forEach(product => {
+                        const productItem = document.createElement('div');
+                        productItem.classList.add('pro');
+                        productItem.innerHTML = `
+                            <h3>${product.name}</h3>
+                            <p>$${parseFloat(product.price).toFixed(2)}</p>
+                            <p>Score: ${product.score || "not scored yet"}</p>
+                            <img src="${product.image}" alt="${product.name}" class="product-image" />
+                            <a href="sproduct.html?id=${product.id}" class="btn">View Product</a>
+                        `;
+                        productTop.appendChild(productItem);
+                    });
+                }
+            };
 
-    const renderCart = () => {
-        cartList.innerHTML = ''; // Clear existing cart items
-        let cartSubtotal = 0;
+            // Function to get the top 4 products with the highest scores
+            const getTopProducts = (products) => {
+                return products
+                    .filter(product => product.score) // Ensure product has a score
+                    .sort((a, b) => (b.score || 0) - (a.score || 0)) // Sort by score in descending order
+                    .slice(0, 4); // Get the top 4
+            };
 
-        cartItems.forEach((item, index) => {
-            const cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-            const itemSubtotal = item.price * item.quantity;
-            cartSubtotal += itemSubtotal;
-
-            cartItem.innerHTML = `
-                <div class="cart-item-details">
-                    <img src="${item.image}" alt="${item.name}" />
-                    <p>${item.name}</p>
-                </div>
-                <p>$${item.price.toFixed(2)}</p>
-                <input type="number" min="1" value="${item.quantity}" class="cart-quantity" data-index="${index}" />
-                <p class="item-subtotal">$${itemSubtotal.toFixed(2)}</p>
-                <button class="remove-item" data-index="${index}"><i class="far fa-times-circle"></i></button>
-            `;
-            cartList.appendChild(cartItem);
-        });
-
-        // Update cart totals
-        cartSubtotalElement.textContent = `$${cartSubtotal.toFixed(2)}`;
-        cartTotalElement.textContent = `$${cartSubtotal.toFixed(2)}`;
-    }
-
-    cartList.addEventListener('input', (e) => {
-        if (e.target.classList.contains('cart-quantity')) {
-            const index = e.target.dataset.index;
-            cartItems[index].quantity = parseInt(e.target.value, 10);
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            renderCart(); // Re-render the cart
+            const topProducts = getTopProducts(products);
+            displayTopProducts(topProducts);
+        } catch (error) {
+            console.error('Failed to fetch products:', error);
         }
-    });
-
-    // Event listener for removing items
-    cartList.addEventListener('click', (e) => {
-        if (e.target.classList.contains('remove-item') || e.target.closest('.remove-item')) {
-            const index = e.target.closest('.remove-item').dataset.index;
-            cartItems.splice(index, 1); // Remove item from the cart
-            localStorage.setItem('cart', JSON.stringify(cartItems));
-            renderCart(); // Re-render the cart
-        }
-    });
-
-    // Proceed to checkout button
-    function proceedToCheckout() {
-        window.location.href = 'checkout.html'; // Navigate to checkout page
+    } else {
+        console.error('.product-top container not found in the HTML.');
     }
 
     if (productList) {
@@ -180,9 +166,5 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     } else {
         console.error('.product-list container not found in the HTML.');
-    }
-
-    function proceedToCheckout() {
-        window.location.href = 'checkout.html'; // Navigate to the checkout page
     }
 });
