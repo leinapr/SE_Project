@@ -11,12 +11,12 @@
 <body>
     <!-- Navbar -->
     <section id="header">
-        <a href="#"><img src="/images/logo.jpg" class="logo" alt="" /></a>
+        <a href="index.html"><img src="/images/logo.jpg" class="logo" alt="" /></a>
 
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
-                <li><a class ="active" href="shop.html">Shop</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cart.html"><i class="fas fa-cart-arrow-down"></i></a></li>
@@ -24,16 +24,33 @@
         </div>
     </section>
     <!-- Product Details Section -->
-    <section class="product-details">
-        <h1>Product Name</h1>
-        <p>Product description goes here.</p>
-        <p>Price: $XX.XX</p>
-        <button class="btn">Add to Cart</button>
-    </section>
+    <div class="product-page">
+        <div class="product-container">
+            <!-- Product image on the left -->
+            <div class="product-image">
+                <img src="default-image.jpg" alt="Product Name" /> <!-- Default image until dynamic is set -->
+            </div>
+
+            <!-- Product details on the right -->
+            <div class="product-details">
+                <h1 class="product-name">Product Name</h1>
+                <p class="product-authors">authors</p>
+                <p class="product-genres">genres</p>
+                <p class="product-price">$0.00</p>
+                <p class="product-description">Product description will appear here.</p>
+
+                <!-- Action buttons -->
+                <div class="product-actions">
+                    <button class="btn add-to-cart">Add to Cart</button>
+                    <button class="btn buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+        <p>&copy; 2024 E-Ragana. All rights reserved.</p>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/sproduct.js"></script>
 </body>
 </html>

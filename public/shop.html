@@ -11,12 +11,12 @@
 <body>
     <!-- Navbar -->
     <section id="header">
-        <a href="#"><img src="/images/logo.jpg" class="logo" alt="" /></a>
+        <a href="index.html"><img src="/images/logo.jpg" class="logo" alt="" /></a>
 
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
-                <li><a class ="active" href="shop.html">Shop</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cart.html"><i class="fas fa-cart-arrow-down"></i></a></li>
@@ -24,15 +24,82 @@
         </div>
     </section>
     <!-- Shop Section -->
-    <section class="shop">
+    <section id="search-bar">
         <h1>Shop Our Products</h1>
+        <input type="text" id="search-input" placeholder="Search by name, author..." />
+        <select id="filter-criteria">
+            <option value="all">All</option>
+            <option value="name">Name</option>
+            <option value="author">Author</option>
+        </select>
+
+
+    </section>
+
+    <section class="shop">
+        <div class="controls">
+            <label for="filter-genre">Filter by Genre:</label>
+            <select id="filter-genre">
+                <option value="all">All Genres</option>
+                <option value="action">Action</option>
+                <option value="adventure">Adventure</option>
+                <option value="avant garde">Avant Garde</option>
+                <option value="award winning">Award Winning</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="gourmet">Gourmet</option>
+                <option value="horror">Horror</option>
+                <option value="mystery">Mystery</option>
+                <option value="romance">Romance</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="slice of life">Slice of Life</option>
+                <option value="sports">Sports</option>
+                <option value="supernatural">Supernatural</option>
+                <option value="suspense">Suspense</option>
+            </select>
+
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category">
+                <option value="all">All Categories</option>
+                <option value="seinen">Seinen</option>
+                <option value="shounen">Shounen</option>
+                <option value="shoujo">Shoujo</option>
+                <option value="josei">Josei</option>
+                <option value="kids">Kids</option>
+            </select>
+
+            <label for="filter-type">Filter by Type:</label>
+            <select id="filter-type">
+                <option value="all">All Types</option>
+                <option value="manga">Manga</option>
+                <option value="manhwa">Manhwa</option>
+                <option value="webtoon">Webtoon</option>
+                <option value="novel">Novel</option>
+                <option value="light_novel">Light Novel</option>
+                <option value="one_shot">One shot</option>
+            </select>
+        </div>
+
+        <div class="controls">
+            <label for="sort-by">Sort By:</label>
+            <select id="sort-by">
+                <option value="default">Default</option>
+                <option value="name">Alphabetical</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="score">Score</option>
+            </select>
+        </div>
+
         <div class="product-list">
             <!-- Product items will be dynamically added here -->
         </div>
     </section>
+
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+        <p>&copy; 2024 E-Ragana All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
 </body>
