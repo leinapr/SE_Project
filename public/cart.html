@@ -11,7 +11,7 @@
 <body>
     <!-- Navbar -->
     <section id="header">
-        <a href="#"><img src="/images/logo.jpg" class="logo" alt="" /></a>
+        <a href="index.html"><img src="/images/logo.jpg" class="logo" alt="" /></a>
 
         <div>
             <ul id="navbar">
@@ -26,14 +26,82 @@
     <!-- Cart Section -->
     <section class="cart">
         <h1>Your Shopping Cart</h1>
-        <div class="cart-items">
-            <!-- Cart items will be dynamically added here -->
+        <div class="cart-item">
+            <img src="/images/sample-product.jpg" alt="Product Image">
+            <div class="cart-details">
+                <h3>Product Name</h3>
+                <p>Price: $XX.XX</p>
+                <p>Quantity: <input type="number" value="1" min="1" /></p>
+            </div>
+            <button class="remove-btn">Remove</button>
         </div>
-        <button class="btn">Checkout</button>
+
+        <div class="cart-summary">
+            <h2>Order Summary</h2>
+            <p><strong>Total: <span id="total">$0.00</span></strong></p>
+        </div>
+
+
+        <button class="btn" onclick="proceedToCheckout()">Checkout</button>
+
+    </section>
+
+    <section id="cart" class="section-p1">
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td>Remove</td>
+                    <td>Image</td>
+                    <td>Product</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                    <td><img src="${product.image}" alt=""></td>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                    <td><input type="number" value="1"></td>
+                    <td>${product.price}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="cart-add" class="section-p1">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+                <input type="text" placeholder="Enter Your Coupon">
+                <button class="normal">Apply</button>
+            </div>
+        </div>
+
+        <div id="subtotal">
+            <h3>Cart Total</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td>$ 0</td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>$ 0</strong></td>
+                </tr>
+            </table>
+            <button class="normal" onclick="proceedToCheckout()">Checkout</button>
+        </div>
     </section>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+        <p>&copy; 2024 E-Ragana. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
 </body>

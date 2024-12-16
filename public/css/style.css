@@ -148,7 +148,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #333;
+    background-color: #39006b;
     color: #fff;
     text-align: center;
     padding: 1rem;
@@ -177,20 +177,6 @@ footer {
 }
 
 .product-details .btn {
-    background-color: #ff6347;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* Cart Page Styles */
-.cart {
-    padding: 2rem;
-    text-align: center;
-}
-
-.cart .btn {
     background-color: #ff6347;
     color: #fff;
     padding: 0.5rem 1rem;
@@ -245,3 +231,205 @@ footer {
     gap: 2rem;
     justify-content: center;
 }
+
+/* Center the titles */
+#product h2,
+#product p {
+    text-align: center;
+    margin: 0 auto;
+}
+
+#product {
+    padding-bottom: 200px;
+    margin-bottom: 100px;
+}
+
+/* Center the search bar */
+#search-bar {
+    display: flex; /* Use a flexible box layout for alignment */
+    justify-content: center; /* Center the search bar elements horizontally */
+    align-items: center; /* Align the elements vertically within the same row */
+    gap: 10px; /* Add spacing between the input field and the dropdown */
+    margin-bottom: 20px; /* Add some space below the search bar */
+}
+
+/* Styles for the search input field */
+#search-input {
+    padding: 10px; /* Add padding inside the input for better readability */
+    font-size: 16px; /* Set the font size for the input text */
+    width: 50%; /* Adjust the width of the input field (can be modified as needed) */
+}
+
+/* Styles for the filter dropdown */
+#filter-criteria {
+    padding: 10px; /* Add padding for better appearance */
+    font-size: 16px; /* Match the font size with the input field */
+}
+
+.cart {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+}
+
+.cart-details {
+    text-align: left;
+    flex: 1;
+    margin-left: 20px;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.btn {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4cae4c;
+}
+
+#cart {
+    overflow-x: auto;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img{
+    width: 70px;
+}
+
+#cart table td:nth-child(1) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart table td:nth-child(2) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(3) {
+    width: 250px;
+    text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input{
+    width: 70px;
+    padding: 10px 5px 10px 15px;
+    text-align: center;
+}
+
+#cart table thead {
+    border: 1px solid grey;
+    border-left: none;
+    border-right: none;
+}
+
+#cart table td {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+#cart table tbody tr td {
+    padding-top: 15px;
+}
+
+#cart table tbody td {
+    font-size: 13px;
+}
+
+#cart-add.section-p1 {
+    margin-bottom: 100px;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+#cart-add{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#coupon{
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3{
+    padding-bottom: 15px;
+}
+
+#coupon input {
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid grey;
+}
+
+#coupon button,
+#subtotal button {
+    background-color: #5cb85c;
+    color: white;
+    padding: 12px 20px;
+}
+
+#subtotal{
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid grey;
+    padding: 30px;
+}
+
+#subtotal table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td {
+    border: 1px solid grey;
+    width: 50%;
+    padding: 10px;
+    font-size: 13px;
+}
+

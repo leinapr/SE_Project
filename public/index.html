@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - E-commerce Websit</title>
+    <title>Home - E-commerce Website</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
     <section id="header">
-        <a href="#"><img src="/images/logo.jpg" class="logo" alt="" /></a>
+        <a href="index.html"><img src="/images/logo.jpg" class="logo" alt="" /></a>
 
         <div>
             <ul id="navbar">
@@ -29,9 +29,23 @@
         <p>Your one-stop shop for all things awesome.</p>
         <a href="shop.html" class="btn">Shop Now</a>
     </section>
+
+    <section id="product">
+        <h2>Featured Products</h2>
+        <p>Best selling mangas</p>
+        <div class="pro-container">
+            <div class="pro">
+                <h3>${product.name}</h3>
+                <p>$${parseFloat(product.price).toFixed(2)}</p>
+                <img src="${product.image}" alt="${product.name}" class="product-image" />
+                <a href="sproduct.html?id=${product.id}" class="btn">View Product</a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+    <footer class="section-p1">
+        <p>&copy; 2024 E-Ragana. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
 </body>
